@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using schoollibrary.service;
 
 namespace schoollibrary.api.Controllers
 {
@@ -6,15 +7,18 @@ namespace schoollibrary.api.Controllers
     [Route("book")]
     public class BookController : ControllerBase
     {
-        public BookController()
+        private readonly IBookService _bookService;
+        public BookController(IBookService bookService)
         {
+            _bookService= bookService;
         }
 
         [HttpGet]
-        [Route("books-list/author/{serial}")]
-        public IActionResult GetBooksListOfSepcificAuthor(decimal serial)
+        [Route("books-list/author/{authorSerial}")]
+        public IActionResult GetBooksListOfSepcificAuthor(decimal authorSerial)
         {
-            return Ok();
+            var books = _bookService.GetBooksListOfSepcificAuthor(authorSerial);
+            return Ok(books);
         }
     }
 }

@@ -1,12 +1,19 @@
-﻿using schoollibrary.domain;
+﻿using schoollibrary.data;
+using schoollibrary.domain;
 
 namespace schoollibrary.service
 {
     public class BookService:IBookService
     {
-        public List<Book> GetBooksListOfSepcificAuthor(decimal serial)
+        private readonly IBookRepository _bookRepository;
+        public BookService(IBookRepository bookRepository)
         {
-            return null;
+            _bookRepository = bookRepository;
+        }
+
+        public IEnumerable<Book> GetBooksListOfSepcificAuthor(decimal authorSerial)
+        {
+           return _bookRepository.GetBooksListOfSepcificAuthor(authorSerial);
         }
     }
 }

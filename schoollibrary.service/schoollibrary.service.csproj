@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\schoollibrary.data\schoollibrary.data.csproj" />
     <ProjectReference Include="..\schoollibrary.domain\schoollibrary.domain.csproj" />
   </ItemGroup>
 

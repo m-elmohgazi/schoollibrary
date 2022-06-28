@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace schoollibrary.service
+namespace schoollibrary.data
 {
-    public interface IBookService
+    public interface IBookRepository
     {
-        IEnumerable<Book> GetBooksListOfSepcificAuthor(decimal serial);
+        IEnumerable<Book> GetBooksListOfSepcificAuthor(decimal authorSerial);
     }
 }

@@ -10,6 +10,7 @@ namespace schoollibrary.service.Utils
     {
         public decimal GetNewSerialNumber()
         {
+            Thread.Sleep(10);
             var number = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss.fff");
             return 1;
         }
